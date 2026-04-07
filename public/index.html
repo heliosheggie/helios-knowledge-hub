@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helios | Transparent Energy Intelligence</title>
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/logo3.png">
     <style>
         :root { --primary: #f39c12; --secondary: #2c3e50; --light: #fdfdfd; --dark: #1a1a1a; --accent: #3498db; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; color: var(--secondary); background-color: var(--light); line-height: 1.6; }
-        header { background: linear-gradient(135deg, var(--secondary) 0%, #000 100%); color: white; padding: 60px 20px; text-align: center; }
-        .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; }
-        .logo-img { height: 120px; width: auto; filter: drop-shadow(0 0 10px rgba(243, 156, 18, 0.3)); }
+        header { background: linear-gradient(135deg, var(--secondary) 0%, #000 100%); color: white; padding: 60px 20px; text-align: center; position: relative; overflow: hidden; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px; position: relative; z-index: 2; }
+        .logo-img { height: 140px; width: auto; filter: drop-shadow(0 0 20px rgba(243, 156, 18, 0.4)); transition: transform 0.3s ease; }
+        .logo-img:hover { transform: scale(1.05); }
+        .header-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(243, 156, 18, 0.15) 0%, rgba(0,0,0,0) 70%); z-index: 1; }
         .hero-sub { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
         .cta-button { display: inline-block; background: var(--primary); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 30px; transition: transform 0.2s, background 0.2s; }
         .cta-button:hover { transform: scale(1.05); background: #e67e22; }
-        .section { margin-bottom: 60px; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; position: relative; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--primary); margin: 10px auto; }
+        .section { margin-bottom: 80px; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--primary); margin: 15px auto; }
+        .mission-block { background: #fcfcfc; border-left: 6px solid var(--primary); padding: 40px; border-radius: 0 15px 15px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 60px; }
+        .mission-text { font-size: 1.3rem; color: var(--secondary); line-height: 1.8; font-style: italic; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; transition: translateY -5px; }
         .card:hover { transform: translateY(-5px); }
@@ -27,14 +31,28 @@
 </head>
 <body>
     <header>
+        <div class="header-glow"></div>
         <div class="logo-container">
-            <img src="assets/logo.png" alt="Helios Logo" class="logo-img">
+            <img src="assets/logo3.png" alt="Helios Logo" class="logo-img">
             <div class="hero-sub">Transparent, validated, Curated energy intelligence for UK homeowners.</div>
             <a href="#truth-table" class="cta-button">View the 2026 Truth-Table</a>
         </div>
     </header>
 
     <div class="container">
+        <div class="section">
+            <h2 class="section-title">Our Mission</h2>
+            <div class="mission-block">
+                <p class="mission-text">
+                    "The home energy market is flooded with biased advice, sales-driven agendas, and inconsistent data. 
+                    <strong>Helios exists to break that cycle.</strong> <br><br>
+                    Our mission is to serve as the uncompromising 'Truth-Seeker' for UK homeowners. By combining a-synchronous research with rigorous technical validation, we strip away the noise and provide the clear, unbiased intelligence required to make confident, cost-effective decisions. 
+                    <br><br>
+                    We don't sell panels. We don't take commissions. <strong>We provide the truth.</strong>"
+                </p>
+            </div>
+        </div>
+
         <div class="section">
             <h2 class="section-title">Why Helios?</h2>
             <div class="grid">
@@ -63,7 +81,7 @@
         </div>
     </div>
 
-<footer>
+    <footer>
         &copy; 2026 Helios Energy Intelligence. Built by Helios.
     </footer>
 </body>
